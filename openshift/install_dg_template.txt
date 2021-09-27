@@ -1,0 +1,1 @@
+oc new-app datagrid-service -p APPLICATION_NAME=datagrid-service-xsite-hello-world -p APPLICATION_USER=santander -p APPLICATION_PASSWORD=santander -p NUMBER_OF_INSTANCES=3 -e AB_PROMETHEUS_ENABLE=true -e SCRIPT_DEBUG=true -e JAVA_OPTS_APPEND="-Djboss.bind.ext_address=10.0.91.137 -Djboss.bind.ext_port=32660 -Djboss.relay.site=SiteB -Djboss.relay.global_cluster=10.0.91.137[32660]"

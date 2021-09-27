@@ -12,8 +12,9 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: datagrid-configuration
+    namespace: datagrid-site-sul
   nfs:
     path: /dados/datagrid-configuration
-    server: 10.0.90.193
+    server: 10.74.176.237
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
