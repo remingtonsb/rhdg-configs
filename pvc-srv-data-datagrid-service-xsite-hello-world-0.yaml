@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    pv.kubernetes.io/bind-completed: "yes"
+  creationTimestamp: "2021-09-21T19:37:00Z"
+  finalizers:
+  - kubernetes.io/pvc-protection
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:accessModes: {}
+        f:resources:
+          f:requests:
+            .: {}
+            f:storage: {}
+        f:volumeMode: {}
+        f:volumeName: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-09-21T19:37:00Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:pv.kubernetes.io/bind-completed: {}
+      f:status:
+        f:accessModes: {}
+        f:capacity:
+          .: {}
+          f:storage: {}
+        f:phase: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-09-21T19:37:24Z"
+  name: srv-data-datagrid-service-xsite-hello-world-0
+  namespace: datagrid-site-sul
+  resourceVersion: "2474725"
+  selfLink: /api/v1/namespaces/datagrid-site-sul/persistentvolumeclaims/srv-data-datagrid-service-xsite-hello-world-0
+  uid: af2b24f8-0143-4c87-82c8-5650f8c90026
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  volumeName: pv-dg-0
+status:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  phase: Bound

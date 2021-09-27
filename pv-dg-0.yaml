@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    pv.kubernetes.io/bound-by-controller: "yes"
+  creationTimestamp: "2021-09-21T19:37:23Z"
+  finalizers:
+  - kubernetes.io/pv-protection
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:accessModes: {}
+        f:capacity:
+          .: {}
+          f:storage: {}
+        f:nfs:
+          .: {}
+          f:path: {}
+          f:server: {}
+        f:persistentVolumeReclaimPolicy: {}
+        f:volumeMode: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-09-21T19:37:23Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:pv.kubernetes.io/bound-by-controller: {}
+      f:spec:
+        f:claimRef:
+          .: {}
+          f:apiVersion: {}
+          f:kind: {}
+          f:name: {}
+          f:namespace: {}
+          f:resourceVersion: {}
+          f:uid: {}
+      f:status:
+        f:phase: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-09-21T19:37:24Z"
+  name: pv-dg-0
+  resourceVersion: "2474723"
+  selfLink: /api/v1/persistentvolumes/pv-dg-0
+  uid: a8afaf53-f595-4435-bdaa-c047b6c890e9
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: srv-data-datagrid-service-xsite-hello-world-0
+    namespace: datagrid-site-sul
+    resourceVersion: "2474605"
+    uid: af2b24f8-0143-4c87-82c8-5650f8c90026
+  nfs:
+    path: /dados/datagrid-service-0
+    server: 10.0.90.193
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+status:
+  phase: Bound

@@ -1,0 +1,381 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2021-09-21T19:52:35Z"
+  generation: 61
+  labels:
+    app: datagrid-service
+    app.kubernetes.io/component: datagrid-service
+    app.kubernetes.io/instance: datagrid-service
+    application: datagrid-service-xsite-hello-world
+    template: datagrid-service
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:openshift.io/generated-by: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:application: {}
+          f:template: {}
+      f:spec:
+        f:podManagementPolicy: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:application: {}
+        f:serviceName: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:application: {}
+              f:deploymentConfig: {}
+            f:name: {}
+          f:spec:
+            f:containers:
+              k:{"name":"datagrid-service-xsite-hello-world"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"AB_PROMETHEUS_ENABLE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"JAVA_OPTS_APPEND"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"JGROUPS_PING_PROTOCOL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OPENSHIFT_DNS_PING_SERVICE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"SCRIPT_DEBUG"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SERVICE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SERVICE_PROFILE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"USERNAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8443,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":8888,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":11222,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/opt/datagrid/standalone/data"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/var/run/secrets/java.io/keystores"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/var/run/secrets/openshift.io/serviceaccount"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"keystore-volume"}:
+                .: {}
+                f:emptyDir: {}
+                f:name: {}
+              k:{"name":"service-certs"}:
+                .: {}
+                f:name: {}
+                f:secret:
+                  .: {}
+                  f:defaultMode: {}
+                  f:secretName: {}
+        f:updateStrategy:
+          f:rollingUpdate:
+            .: {}
+            f:partition: {}
+          f:type: {}
+        f:volumeClaimTemplates: {}
+    manager: oc
+    operation: Update
+    time: "2021-09-21T19:52:35Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"datagrid-service-xsite-hello-world"}:
+                f:volumeMounts:
+                  k:{"mountPath":"/opt/datagrid/standalone/configuration/"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:volumes:
+              k:{"name":"datagrid-configuration"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-09-21T23:35:33Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"datagrid-service-xsite-hello-world"}:
+                f:env:
+                  k:{"name":"JAVA_OPTS_APPEND"}:
+                    f:value: {}
+                  k:{"name":"LOGGING_CATEGORIES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2021-09-22T01:00:26Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:collisionCount: {}
+        f:currentReplicas: {}
+        f:currentRevision: {}
+        f:observedGeneration: {}
+        f:replicas: {}
+        f:updateRevision: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-09-27T01:19:19Z"
+  name: datagrid-service-xsite-hello-world
+  namespace: datagrid-site-sul
+  resourceVersion: "4454679"
+  selfLink: /apis/apps/v1/namespaces/datagrid-site-sul/statefulsets/datagrid-service-xsite-hello-world
+  uid: a42785c8-edf7-4389-8b39-9c61a129151a
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      application: datagrid-service-xsite-hello-world
+  serviceName: datagrid-service-xsite-hello-world-ping
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        application: datagrid-service-xsite-hello-world
+        deploymentConfig: datagrid-service-xsite-hello-world
+      name: datagrid-service-xsite-hello-world
+    spec:
+      containers:
+      - env:
+        - name: LOGGING_CATEGORIES
+          value: org.infinispan=TRACE
+        - name: AB_PROMETHEUS_ENABLE
+          value: "true"
+        - name: JAVA_OPTS_APPEND
+          value: -Djboss.bind.ext_address=10.0.92.242 -Djboss.bind.ext_port=32660 -Djboss.relay.site=SiteA -Djboss.relay.global_cluster=10.0.92.242[32660],10.0.91.137[32660]
+        - name: SCRIPT_DEBUG
+          value: "true"
+        - name: SERVICE_NAME
+          value: datagrid-service-xsite-hello-world
+        - name: SERVICE_PROFILE
+          value: datagrid-service
+        - name: JGROUPS_PING_PROTOCOL
+          value: openshift.DNS_PING
+        - name: OPENSHIFT_DNS_PING_SERVICE_NAME
+          value: datagrid-service-xsite-hello-world-ping
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: application-user
+              name: datagrid-service-xsite-hello-world
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: application-password
+              name: datagrid-service-xsite-hello-world
+        image: registry.redhat.io/jboss-datagrid-7/datagrid73-openshift
+        imagePullPolicy: Always
+        livenessProbe:
+          exec:
+            command:
+            - /opt/datagrid/bin/livenessProbe.sh
+          failureThreshold: 5
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 10
+        name: datagrid-service-xsite-hello-world
+        ports:
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+        - containerPort: 8888
+          name: ping
+          protocol: TCP
+        - containerPort: 11222
+          name: hotrod
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /opt/datagrid/bin/readinessProbe.sh
+          failureThreshold: 5
+          initialDelaySeconds: 17
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 10
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /opt/datagrid/standalone/configuration/
+          name: datagrid-configuration
+        - mountPath: /opt/datagrid/standalone/data
+          name: srv-data
+        - mountPath: /var/run/secrets/java.io/keystores
+          name: keystore-volume
+        - mountPath: /var/run/secrets/openshift.io/serviceaccount
+          name: service-certs
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 60
+      volumes:
+      - name: datagrid-configuration
+        persistentVolumeClaim:
+          claimName: datagrid-configuration
+      - emptyDir: {}
+        name: keystore-volume
+      - name: service-certs
+        secret:
+          defaultMode: 420
+          secretName: service-certs
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      name: srv-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+      volumeMode: Filesystem
+    status:
+      phase: Pending
+status:
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: datagrid-service-xsite-hello-world-7587797d7b
+  observedGeneration: 61
+  replicas: 1
+  updateRevision: datagrid-service-xsite-hello-world-7587797d7b
+  updatedReplicas: 1

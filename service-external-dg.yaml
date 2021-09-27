@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rhdg-service-external
+spec:
+  clusterIP: 172.30.163.111
+  externalIPs:
+  - 10.0.92.242
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: highport
+    nodePort: 32760
+    port: 8660
+    protocol: TCP
+    targetPort: 8660
+  selector:
+    application: datagrid-service-xsite-hello-world
+  sessionAffinity: None
+  type: LoadBalancer
