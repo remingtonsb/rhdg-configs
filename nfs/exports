@@ -1,0 +1,4 @@
+/dados/datagrid-service-0 *(rw)
+/dados/datagrid-service-1 *(rw)
+/dados/datagrid-service-2 *(rw)
+/dados/datagrid-configuration *(rw)

@@ -1,0 +1,5 @@
+systemctl enable nfs-server
+systemctl start nfs-server
+systemctl enable rpcbind
+systemctl start rpcbind
+exportfs
