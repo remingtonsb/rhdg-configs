@@ -2,44 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    description: Provides a service for cross-site replication.
-  creationTimestamp: "2021-09-21T19:46:15Z"
-  labels:
-    application: datagrid-service-xsite-hello-world
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:description: {}
-        f:labels:
-          .: {}
-          f:application: {}
-      f:spec:
-        f:externalTrafficPolicy: {}
-        f:ports:
-          .: {}
-          k:{"port":8660,"protocol":"TCP"}:
-            .: {}
-            f:nodePort: {}
-            f:port: {}
-            f:protocol: {}
-            f:targetPort: {}
-        f:selector:
-          .: {}
-          f:deploymentConfig: {}
-        f:sessionAffinity: {}
-        f:type: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2021-09-21T19:46:15Z"
   name: datagrid-service-xsite
-  namespace: datagrid-site-sul
-  resourceVersion: "2477299"
-  selfLink: /api/v1/namespaces/datagrid-site-sul/services/datagrid-service-xsite
-  uid: 917639ac-790f-4694-a199-9e22f66e7854
 spec:
   clusterIP: 172.30.244.221
   externalTrafficPolicy: Cluster
@@ -52,5 +15,3 @@ spec:
     deploymentConfig: datagrid-service-xsite-hello-world
   sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer: {}
